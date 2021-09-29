@@ -1,4 +1,4 @@
-/*CSS - Variables*/
+/*variables*/
 :root {
   --color-one: hsl(0, 36%, 70%);
   --color-two: hsl(0, 93%, 68%);
@@ -8,7 +8,7 @@
   --gradient-start-two: hsl(0, 80%, 86%);
   --gradient-end-two: hsl(0, 74%, 74%);
 }
-/*CSS - Normalize*/
+/*normalize*/
 *,
 *::before,
 *::after {
@@ -16,45 +16,43 @@
   padding: 0;
   box-sizing: border-box;
 }
-/*CSS - Reusable code*/
+/*reusable code*/
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-/*CSS - root*/
+/*root*/
 html {
   font-size: 62.5%;
 }
-/*CSS - Container page*/
+/*container page*/
 body {
   font-family: "Josefin Sans", sans-serif;
 }
-/**/
+/*mobile image section*/
 .base-apparel-page__box-image-mobile {
   display: none;
   visibility: hidden;
 }
-/**/
+/*main page*/
 .main-page {
-  width: 100vw;
-
   position: relative;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
 }
-/**/
+/*component*/
 .base-apparel-page {
   display: flex;
   justify-content: center;
 
+  max-width: 1000px;
+
   padding: 0 2rem;
   margin: auto;
-
-  max-width: 1000px;
 }
-/**/
+/*first element*/
 .base-apparel-page__presentation-box {
   background-image: url(../images/bg-pattern-desktop.svg),
     linear-gradient(
@@ -69,16 +67,15 @@ body {
 
   padding: 0 11rem;
 }
+/*logo section*/
 .base-apparel-page__box-logo {
   padding-top: 5rem;
   padding-bottom: 7rem;
 }
 .base-apparel-page__logo {
-  display: block;
   width: 12rem;
-  height: auto;
 }
-/**/
+/*text section*/
 .base-apparel-page__box-title {
   text-transform: uppercase;
   letter-spacing: 1rem;
@@ -103,15 +100,12 @@ body {
 
   padding: 2rem 0;
 }
-/**/
+/*block*/
 .send-mail {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  position: relative;
 }
 .send-mail__box-input {
   position: relative;
-  width: 100%;
 }
 .send-mail__input {
   background-color: transparent;
@@ -130,13 +124,11 @@ body {
   font-weight: 400;
   opacity: 1; /* Firefox */
 }
-
 .send-mail__input:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: var(--gradient-start-two);
   font-weight: 400;
 }
-
 .send-mail__input::-ms-input-placeholder {
   /* Microsoft Edge */
   color: var(--gradient-start-two);
@@ -145,8 +137,11 @@ body {
 .send-mail__error-icon {
   visibility: hidden;
   position: absolute;
-  right: 28%;
-  top: 1rem;
+
+  width: 2rem;
+
+  right: 9rem;
+  top: 1.2em;
 }
 .send-mail__error-text {
   visibility: hidden;
@@ -160,6 +155,7 @@ body {
 }
 .send-mail__error--show {
   visibility: visible;
+  display: inline-block;
 }
 .send-mail__send {
   background-image: linear-gradient(
@@ -167,7 +163,7 @@ body {
     rgba(248, 191, 191, 1) 0%,
     rgba(238, 140, 140, 1) 100%
   );
-  padding: 1.4rem 3.6rem;
+  padding: 0 3.6rem;
   border-radius: 2.5rem;
   border: none;
 
@@ -177,12 +173,12 @@ body {
   right: 0;
 }
 .send-mail__icon {
-  display: inline;
+  width: 1rem;
+
   position: relative;
-  top: -0.2rem;
-  margin: auto;
+  top: 0.1rem;
 }
-/**/
+/*second element*/
 .base-apparel-page__box-image {
   flex: 0 0 43%;
 
@@ -195,18 +191,18 @@ body {
 }
 
 @media screen and (max-width: 770px) {
-  /**/
+  /*main-page*/
   .main-page {
     top: 0;
     left: 0;
     transform: translate(0, 0);
   }
-  /**/
+  /*second element*/
   .base-apparel-page__box-image {
     display: none;
     visibility: hidden;
   }
-  /**/
+  /*mobile image section*/
   .base-apparel-page__box-image-mobile {
     display: block;
     visibility: visible;
@@ -216,38 +212,37 @@ body {
     width: 100%;
     height: auto;
   }
-  /**/
+  /*component*/
   .base-apparel-page {
     max-width: 50rem;
     padding: 0;
   }
-  /**/
+  /*first element*/
   .base-apparel-page__presentation-box {
     flex: 1 0 100%;
     padding: 0;
     padding-bottom: 14rem;
   }
+  /*logo section*/
   .base-apparel-page__box-logo {
     padding: 4rem;
   }
   .base-apparel-page__logo {
     width: 13rem;
   }
+  /*text secion*/
   .base-apparel-page__box-text {
     text-align: center;
     padding-top: 8rem;
   }
-  /**/
   .base-apparel-page__box-title {
-    text-transform: uppercase;
-    letter-spacing: 1rem;
+    letter-spacing: 1.6rem;
   }
   .base-apparel-page__title-normal {
-    letter-spacing: 2.2rem;
-    font-size: 6rem;
+    font-size: 4.6rem;
   }
   .base-apparel-page__tittle-bold {
-    font-size: 6rem;
+    font-size: 4.6rem;
   }
   .base-apparel-page__text {
     font-size: 1.85rem;
@@ -256,7 +251,7 @@ body {
     padding: 2rem 5rem;
     margin-bottom: 4rem;
   }
-  /**/
+  /*block*/
   .send-mail {
     padding: 0 5rem;
   }
@@ -265,11 +260,11 @@ body {
     padding: 1.8rem 3rem;
   }
   .send-mail__send {
-    padding: 1.4rem 3rem;
+    padding: 0 3rem;
     border-radius: 3rem;
   }
-  .send-mail__icon {
-    display: block;
+  .send-mail__error-icon {
+    top: 1.8rem;
   }
 }
 @media screen and (max-width: 430px) {
