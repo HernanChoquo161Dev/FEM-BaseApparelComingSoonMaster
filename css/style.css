@@ -30,52 +30,52 @@ html {
 body {
   font-family: "Josefin Sans", sans-serif;
 }
-/*mobile image section*/
-.base-apparel-page__box-image-mobile {
-  display: none;
-  visibility: hidden;
-}
 /*main page*/
 .main-page {
   position: relative;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
+
+  padding: 0 2rem;
 }
 /*component*/
 .base-apparel-page {
-  display: flex;
-  justify-content: center;
-
-  max-width: 1000px;
-
-  padding: 0 2rem;
-  margin: auto;
-}
-/*first element*/
-.base-apparel-page__presentation-box {
   background-image: url(../images/bg-pattern-desktop.svg),
     linear-gradient(
       90deg,
       rgba(255, 255, 255, 1) 0%,
       rgba(255, 245, 245, 1) 100%
     );
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 
-  flex: 1 0 52%;
+  display: grid;
 
-  padding: 0 11rem;
+  grid-template-columns: 1fr 44%;
+  grid-template-rows: min-content dense;
+
+  align-content: center;
+
+  max-width: 1000px;
+
+  margin: auto;
 }
 /*logo section*/
 .base-apparel-page__box-logo {
-  padding-top: 5rem;
-  padding-bottom: 7rem;
+  padding: 0 10rem;
+
+  align-self: center;
 }
 .base-apparel-page__logo {
   width: 12rem;
 }
 /*text section*/
+.base-apparel-page__box-text {
+  align-self: center;
+
+  padding: 0 10rem;
+}
 .base-apparel-page__box-title {
   text-transform: uppercase;
   letter-spacing: 1rem;
@@ -98,11 +98,13 @@ body {
   font-size: 1.3rem;
   line-height: 2rem;
 
-  padding: 2rem 0;
+  padding-top: 2rem;
 }
 /*block*/
 .send-mail {
   position: relative;
+
+  padding: 0 10rem;
 }
 .send-mail__box-input {
   position: relative;
@@ -133,6 +135,12 @@ body {
   /* Microsoft Edge */
   color: var(--gradient-start-two);
   font-weight: 400;
+}
+.send-mail__input--error {
+  border: 0.1rem solid var(--color-two);
+}
+.send-mail__input--valid {
+  border: 0.1rem solid rgb(54, 54, 54);
 }
 .send-mail__error-icon {
   visibility: hidden;
@@ -180,9 +188,8 @@ body {
 }
 /*second element*/
 .base-apparel-page__box-image {
-  flex: 0 0 43%;
-
-  height: 100%;
+  grid-row: 1 / span 3;
+  grid-column: 2 / span 1;
 }
 .base-apparel-page__image {
   display: block;
@@ -196,32 +203,25 @@ body {
     top: 0;
     left: 0;
     transform: translate(0, 0);
-  }
-  /*second element*/
-  .base-apparel-page__box-image {
-    display: none;
-    visibility: hidden;
-  }
-  /*mobile image section*/
-  .base-apparel-page__box-image-mobile {
-    display: block;
-    visibility: visible;
-  }
-  .base-apparel-page__image-mobile {
-    display: block;
-    width: 100%;
-    height: auto;
+
+    padding: 0;
   }
   /*component*/
   .base-apparel-page {
     max-width: 50rem;
     padding: 0;
+
+    grid-template-columns: 1fr;
   }
-  /*first element*/
-  .base-apparel-page__presentation-box {
-    flex: 1 0 100%;
-    padding: 0;
-    padding-bottom: 14rem;
+  /*image section*/
+  .base-apparel-page__box-image {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+  .base-apparel-page__image {
+    content: url(../images/hero-mobile.jpg);
+    display: block;
+    width: 100%;
   }
   /*logo section*/
   .base-apparel-page__box-logo {
@@ -233,6 +233,8 @@ body {
   /*text secion*/
   .base-apparel-page__box-text {
     text-align: center;
+
+    padding: 0;
     padding-top: 8rem;
   }
   .base-apparel-page__box-title {
@@ -254,6 +256,8 @@ body {
   /*block*/
   .send-mail {
     padding: 0 5rem;
+
+    padding-bottom: 12rem;
   }
   .send-mail__input {
     font-size: 1.6rem;
@@ -268,25 +272,21 @@ body {
   }
 }
 @media screen and (max-width: 430px) {
-  /*CSS - root*/
   html {
     font-size: 53.5%;
   }
 }
 @media screen and (max-width: 380px) {
-  /*CSS - root*/
   html {
     font-size: 47.5%;
   }
 }
 @media screen and (max-width: 320px) {
-  /*CSS - root*/
   html {
     font-size: 40.5%;
   }
 }
 @media screen and (max-width: 280px) {
-  /*CSS - root*/
   html {
     font-size: 35.5%;
   }
