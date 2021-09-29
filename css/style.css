@@ -31,6 +31,11 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 /**/
+.base-apparel-page__box-image-mobile {
+  display: none;
+  visibility: hidden;
+}
+/**/
 .main-page {
   width: 100vw;
 
@@ -43,6 +48,8 @@ body {
 .base-apparel-page {
   display: flex;
   justify-content: center;
+
+  padding: 0 2rem;
   margin: auto;
 
   max-width: 1000px;
@@ -60,61 +67,61 @@ body {
 
   flex: 1 0 52%;
 
-  padding: 0 110px;
+  padding: 0 11rem;
 }
 .base-apparel-page__box-logo {
-  padding-top: 50px;
-  padding-bottom: 70px;
+  padding-top: 5rem;
+  padding-bottom: 7rem;
 }
 .base-apparel-page__logo {
   display: block;
-  max-width: 120px;
+  width: 12rem;
   height: auto;
 }
 /**/
-.base-apparel-page__box-text {
-}
 .base-apparel-page__box-title {
   text-transform: uppercase;
-  letter-spacing: 10px;
+  letter-spacing: 1rem;
 }
 .base-apparel-page__title-normal {
   display: block;
 
   color: var(--color-one);
-  font-size: 54px;
+  font-size: 5.4rem;
   font-weight: 300;
 }
 .base-apparel-page__tittle-bold {
   display: block;
 
-  font-size: 54px;
+  font-size: 5.4rem;
   font-weight: 600;
 }
 .base-apparel-page__text {
   color: var(--color-one);
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 1.3rem;
+  line-height: 2rem;
 
-  padding: 20px 0;
+  padding: 2rem 0;
 }
 /**/
 .send-mail {
-  position: relative;
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+.send-mail__box-input {
+  position: relative;
+  width: 100%;
 }
 .send-mail__input {
   background-color: transparent;
   width: 100%;
 
-  font-size: 12px;
+  font-size: 1.2rem;
 
-  padding: 14px 20px;
-  border-radius: 25px;
-  border: 1px solid var(--gradient-start-two);
+  padding: 1.4rem 2rem;
+  border-radius: 2.5rem;
+  border: 0.1rem solid var(--gradient-start-two);
   outline: none;
 }
 .send-mail__input::placeholder {
@@ -139,16 +146,16 @@ body {
   visibility: hidden;
   position: absolute;
   right: 28%;
-  top: 10px;
+  top: 1rem;
 }
 .send-mail__error-text {
   visibility: hidden;
   position: absolute;
-  left: 20px;
-  bottom: -20px;
+  left: 2rem;
+  bottom: -2rem;
 
   color: var(--gradient-end-two);
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 .send-mail__error--show {
@@ -160,15 +167,20 @@ body {
     rgba(248, 191, 191, 1) 0%,
     rgba(238, 140, 140, 1) 100%
   );
-  padding: 14px 36px;
-  border-radius: 25px;
+  padding: 1.4rem 3.6rem;
+  border-radius: 2.5rem;
   border: none;
+
+  height: 100%;
 
   position: absolute;
   right: 0;
 }
 .send-mail__icon {
-  display: block;
+  display: inline;
+  position: relative;
+  top: -0.2rem;
+  margin: auto;
 }
 /**/
 .base-apparel-page__box-image {
@@ -183,4 +195,104 @@ body {
 }
 
 @media screen and (max-width: 770px) {
+  /**/
+  .main-page {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+  /**/
+  .base-apparel-page__box-image {
+    display: none;
+    visibility: hidden;
+  }
+  /**/
+  .base-apparel-page__box-image-mobile {
+    display: block;
+    visibility: visible;
+  }
+  .base-apparel-page__image-mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  /**/
+  .base-apparel-page {
+    max-width: 50rem;
+    padding: 0;
+  }
+  /**/
+  .base-apparel-page__presentation-box {
+    flex: 1 0 100%;
+    padding: 0;
+    padding-bottom: 14rem;
+  }
+  .base-apparel-page__box-logo {
+    padding: 4rem;
+  }
+  .base-apparel-page__logo {
+    width: 13rem;
+  }
+  .base-apparel-page__box-text {
+    text-align: center;
+    padding-top: 8rem;
+  }
+  /**/
+  .base-apparel-page__box-title {
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+  }
+  .base-apparel-page__title-normal {
+    letter-spacing: 2.2rem;
+    font-size: 6rem;
+  }
+  .base-apparel-page__tittle-bold {
+    font-size: 6rem;
+  }
+  .base-apparel-page__text {
+    font-size: 1.85rem;
+    line-height: 3rem;
+
+    padding: 2rem 5rem;
+    margin-bottom: 4rem;
+  }
+  /**/
+  .send-mail {
+    padding: 0 5rem;
+  }
+  .send-mail__input {
+    font-size: 1.6rem;
+    padding: 1.8rem 3rem;
+  }
+  .send-mail__send {
+    padding: 1.4rem 3rem;
+    border-radius: 3rem;
+  }
+  .send-mail__icon {
+    display: block;
+  }
+}
+@media screen and (max-width: 430px) {
+  /*CSS - root*/
+  html {
+    font-size: 53.5%;
+  }
+}
+@media screen and (max-width: 380px) {
+  /*CSS - root*/
+  html {
+    font-size: 47.5%;
+  }
+}
+@media screen and (max-width: 320px) {
+  /*CSS - root*/
+  html {
+    font-size: 40.5%;
+  }
+}
+@media screen and (max-width: 280px) {
+  /*CSS - root*/
+  html {
+    font-size: 35.5%;
+  }
 }
