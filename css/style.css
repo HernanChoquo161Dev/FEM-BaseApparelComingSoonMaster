@@ -3,8 +3,8 @@
   --color-one: hsl(0, 36%, 70%);
   --color-two: hsl(0, 93%, 68%);
 
-  --gradient-start-one: hsl(0, 0%, 100%);
-  --gradient-end-one: hsl(0, 100%, 98%);
+  --gradient-start-one: #ffffff;
+  --gradient-end-one: #fff5f5;
   --gradient-start-two: hsl(0, 80%, 86%);
   --gradient-end-two: hsl(0, 74%, 74%);
 }
@@ -16,12 +16,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-/*reusable code*/
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 /*root*/
 html {
   font-size: 62.5%;
@@ -30,52 +24,52 @@ html {
 body {
   font-family: "Josefin Sans", sans-serif;
 }
-/*mobile image section*/
-.base-apparel-page__box-image-mobile {
-  display: none;
-  visibility: hidden;
-}
 /*main page*/
 .main-page {
   position: relative;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
+
+  padding: 0 2rem;
 }
 /*component*/
 .base-apparel-page {
-  display: flex;
-  justify-content: center;
+  max-width: 100rem;
 
-  max-width: 1000px;
+  display: grid;
 
-  padding: 0 2rem;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, max-content);
+
   margin: auto;
 }
-/*first element*/
-.base-apparel-page__presentation-box {
-  background-image: url(../images/bg-pattern-desktop.svg),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 245, 245, 1) 100%
-    );
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  flex: 1 0 52%;
-
-  padding: 0 11rem;
-}
-/*logo section*/
+/*section logo*/
 .base-apparel-page__box-logo {
-  padding-top: 5rem;
-  padding-bottom: 7rem;
+  grid-column: 1 / 7;
+  grid-row: 1 / 4;
+
+  align-self: center;
+
+  padding-left: 12rem;
+
+  z-index: 100;
 }
 .base-apparel-page__logo {
   width: 12rem;
+  z-index: 100;
 }
-/*text section*/
+/*section text*/
+.base-apparel-page__box-text {
+  grid-column: 1 / 7;
+  grid-row: 4 / 7;
+
+  align-self: center;
+
+  padding: 0 12rem;
+  padding-right: 15rem;
+  z-index: 100;
+}
 .base-apparel-page__box-title {
   text-transform: uppercase;
   letter-spacing: 1rem;
@@ -84,21 +78,33 @@ body {
   display: block;
 
   color: var(--color-one);
-  font-size: 5.4rem;
+  font-size: 4.4rem;
   font-weight: 300;
 }
 .base-apparel-page__tittle-bold {
   display: block;
 
-  font-size: 5.4rem;
+  font-size: 4.4rem;
   font-weight: 600;
 }
 .base-apparel-page__text {
   color: var(--color-one);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 2rem;
 
-  padding: 2rem 0;
+  padding-top: 1.6rem;
+}
+/*section form*/
+.base-apparel-page__box-form {
+  grid-column: 1 / 7;
+  grid-row: 7 / 11;
+
+  align-self: start;
+
+  padding: 0 12rem;
+  padding-right: 15rem;
+
+  z-index: 100;
 }
 /*block*/
 .send-mail {
@@ -133,6 +139,12 @@ body {
   /* Microsoft Edge */
   color: var(--gradient-start-two);
   font-weight: 400;
+}
+.send-mail__input--error {
+  border: 0.1rem solid var(--color-two);
+}
+.send-mail__input--valid {
+  border: 0.1rem solid rgb(54, 54, 54);
 }
 .send-mail__error-icon {
   visibility: hidden;
@@ -178,27 +190,114 @@ body {
   position: relative;
   top: 0.1rem;
 }
-/*second element*/
+/*section image*/
 .base-apparel-page__box-image {
-  flex: 0 0 43%;
+  grid-column: 7 / 11;
+  grid-row: 1 / 11;
 
-  height: 100%;
+  z-index: 100;
 }
 .base-apparel-page__image {
   display: block;
   max-width: 100%;
-  height: auto;
+  object-fit: contain;
 }
+/*background section (logo-text-form)*/
+.base-apparel-page__box-logo-background {
+  grid-column: 1 / 7;
+  grid-row: 1 / 11;
 
+  height: 100%;
+
+  background-image: url(../images/bg-pattern-desktop.svg),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 245, 245, 1) 100%
+    );
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: left bottom;
+
+  z-index: 50;
+}
+@media screen and (max-width: 930px) {
+  html {
+    font-size: 54.5%;
+  }
+}
+@media screen and (max-width: 880px) {
+  html {
+    font-size: 50.5%;
+  }
+}
 @media screen and (max-width: 770px) {
   /*main-page*/
   .main-page {
     top: 0;
     left: 0;
     transform: translate(0, 0);
+
+    padding: 0;
   }
-  /*first element*/
-  .base-apparel-page__presentation-box {
+  /*component*/
+  .base-apparel-page {
+    grid-template-columns: minmax(20rem, 45rem);
+    grid-template-rows: repeat(4, max-content);
+
+    justify-content: center;
+  }
+  /*section logo*/
+  .base-apparel-page__box-logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    padding: 5rem;
+  }
+  /*section text*/
+  .base-apparel-page__box-text {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+
+    text-align: center;
+
+    padding: 0 5rem;
+    padding-top: 10rem;
+  }
+  .base-apparel-page__title-normal {
+    font-size: 5rem;
+  }
+  .base-apparel-page__tittle-bold {
+    font-size: 5rem;
+  }
+  .base-apparel-page__text {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  /*section form*/
+  .base-apparel-page__box-form {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+
+    padding: 5rem;
+    padding-bottom: 10rem;
+  }
+  /*section image*/
+  .base-apparel-page__box-image {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .base-apparel-page__image {
+    content: url(../images/hero-mobile.jpg);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  /*background section (logo-text-form)*/
+  .base-apparel-page__box-logo-background {
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+
     background-image: linear-gradient(
       115deg,
       rgba(255, 255, 255, 1) 0%,
@@ -206,103 +305,32 @@ body {
     );
     background-size: cover;
     background-repeat: no-repeat;
-
-    flex: 1 0 52%;
-
-    padding: 0 11rem;
+    background-position: left bottom;
   }
-  /*second element*/
-  .base-apparel-page__box-image {
-    display: none;
-    visibility: hidden;
-  }
-  /*mobile image section*/
-  .base-apparel-page__box-image-mobile {
-    display: block;
-    visibility: visible;
-  }
-  .base-apparel-page__image-mobile {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  /*component*/
-  .base-apparel-page {
-    max-width: 50rem;
-    padding: 0;
-  }
-  /*first element*/
-  .base-apparel-page__presentation-box {
-    flex: 1 0 100%;
-    padding: 0;
-    padding-bottom: 14rem;
-  }
-  /*logo section*/
-  .base-apparel-page__box-logo {
-    padding: 4rem;
-  }
-  .base-apparel-page__logo {
-    width: 13rem;
-  }
-  /*text secion*/
-  .base-apparel-page__box-text {
-    text-align: center;
-    padding-top: 8rem;
-  }
-  .base-apparel-page__box-title {
-    letter-spacing: 1.6rem;
-  }
-  .base-apparel-page__title-normal {
-    font-size: 4.6rem;
-  }
-  .base-apparel-page__tittle-bold {
-    font-size: 4.6rem;
-  }
-  .base-apparel-page__text {
-    font-size: 1.85rem;
-    line-height: 3rem;
-
-    padding: 2rem 5rem;
-    margin-bottom: 4rem;
-  }
-  /*block*/
-  .send-mail {
-    padding: 0 5rem;
-  }
-  .send-mail__input {
-    font-size: 1.6rem;
-    padding: 1.8rem 3rem;
-  }
-  .send-mail__send {
-    padding: 0 3rem;
-    border-radius: 3rem;
-  }
-  .send-mail__error-icon {
-    top: 1.8rem;
+}
+@media screen and (max-width: 426px) {
+  html {
+    font-size: 59.5%;
   }
   /*background section (logo-text-form)*/
 }
-@media screen and (max-width: 430px) {
-  /*CSS - root*/
+@media screen and (max-width: 375px) {
   html {
     font-size: 53.5%;
   }
 }
-@media screen and (max-width: 380px) {
-  /*CSS - root*/
+@media screen and (max-width: 360px) {
   html {
-    font-size: 47.5%;
+    font-size: 50%;
   }
 }
 @media screen and (max-width: 320px) {
-  /*CSS - root*/
   html {
-    font-size: 40.5%;
+    font-size: 45%;
   }
 }
 @media screen and (max-width: 280px) {
-  /*CSS - root*/
   html {
-    font-size: 35.5%;
+    font-size: 40%;
   }
 }

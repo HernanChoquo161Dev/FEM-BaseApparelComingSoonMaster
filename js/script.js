@@ -11,6 +11,8 @@ let menssageEmailValid = false;
 function showErrorMenssage(){
     errorIcon.classList.toggle("send-mail__error--show");
     errorText.classList.toggle("send-mail__error--show");
+
+    formInput.classList.toggle("send-mail__input--error");
 }
 function checkListEmail(listEmail){
     for(a = 0; a < listEmail.length; a++){
@@ -53,7 +55,7 @@ formButton.addEventListener('click', function (event) {
         }
         else{
             if(!menssageActive){
-                errorText.style.color = "green";
+                errorText.style.color = "rgb(54, 54, 54)";
                 errorText.innerHTML = "Your email is valid";
                 errorText.classList.toggle("send-mail__error--show");
 

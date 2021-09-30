@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   
-  <title>Frontend Mentor | Base Apparel coming soon page</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
 <body>
-  <!--main page-->
-  <main class="main-page">
-    <!--component-->
-    <div class="base-apparel-page">
-      <!--first element-->
-      <div class="base-apparel-page__presentation-box">
-        <!--logo section-->
-        <div class="base-apparel-page__box-logo">
-          <img src="./images/logo.svg" alt="logo-image" class="base-apparel-page__logo">
+    <!--main page-->
+    <main class="main-page">
+        <!--component-->
+        <div class="base-apparel-page">
+            <!--background section (logo-text-form)-->
+            <div class="base-apparel-page__box-logo-background"></div>
+            <!--logo section-->
+            <div class="base-apparel-page__box-logo">
+                <img src="./images/logo.svg" alt="logo-image" class="base-apparel-page__logo">
+            </div>
+            <!--text section-->
+            <div class="base-apparel-page__box-text">
+                <h1 class="base-apparel-page__box-title">
+                    <span class="base-apparel-page__title-normal">We're</span>
+                    <span class="base-apparel-page__tittle-bold">coming soon</span>
+                </h1>
+                <p class="base-apparel-page__text">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+            </div>
+            <!--form section-->
+            <div class="base-apparel-page__box-form">
+                <!--block-->
+                <form action="#" method="GET" class="send-mail">
+                    <div class="send-mail__box-input">
+                    <input type="text" placeholder="Email Address" class="send-mail__input">
+                    <img src="./images/icon-error.svg" alt="error-icon" class="send-mail__error-icon">
+                    <span class="send-mail__error-text">Pleace provide a valid email</span>
+                    <button type="submit" class="send-mail__send">
+                        <img src="./images/icon-arrow.svg" alt="icon-button" class="send-mail__icon">
+                    </button>
+                    </div>
+                </form>
+            </div>
+            <!--image section-->
+            <div class="base-apparel-page__box-image">
+                <img src="./images/hero-desktop.jpg" alt="" class="base-apparel-page__image">
+            </div>
         </div>
-        <!--mobile image section-->
-        <div class="base-apparel-page__box-image-mobile">
-          <img src="./images/hero-mobile.jpg" alt="presentation-image" class="base-apparel-page__image-mobile">
-        </div>
-        <!--text section-->
-        <div class="base-apparel-page__box-text">
-          <h1 class="base-apparel-page__box-title">
-            <span class="base-apparel-page__title-normal">We're</span>
-            <span class="base-apparel-page__tittle-bold">coming soon</span>
-          </h1>
-          <p class="base-apparel-page__text">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
-        </div>
-        <!--block-->
-        <form action="#" method="GET" class="send-mail">
-          <div class="send-mail__box-input">
-            <input type="text" placeholder="Email Address" class="send-mail__input">
-            <img src="./images/icon-error.svg" alt="error-icon" class="send-mail__error-icon">
-            <span class="send-mail__error-text">Pleace provide a valid email</span>
-            <button type="submit" class="send-mail__send">
-              <img src="./images/icon-arrow.svg" alt="icon-button" class="send-mail__icon">
-            </button>
-          </div>
-        </form>
-      </div>
-      <!--second element-->
-      <div class="base-apparel-page__box-image">
-        <img src="./images/hero-desktop.jpg" alt="presentation-image" class="base-apparel-page__image">
-      </div>
-    </div>
-  </main>
+    </main>
 
-  <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
