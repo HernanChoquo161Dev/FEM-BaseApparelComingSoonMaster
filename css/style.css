@@ -197,6 +197,20 @@ body {
     left: 0;
     transform: translate(0, 0);
   }
+  /*first element*/
+  .base-apparel-page__presentation-box {
+    background-image: linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 245, 245, 1) 75%
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    flex: 1 0 52%;
+
+    padding: 0 11rem;
+  }
   /*second element*/
   .base-apparel-page__box-image {
     display: none;
@@ -266,6 +280,7 @@ body {
   .send-mail__error-icon {
     top: 1.8rem;
   }
+  /*background section (logo-text-form)*/
 }
 @media screen and (max-width: 430px) {
   /*CSS - root*/
