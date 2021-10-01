@@ -314,7 +314,7 @@ body {
   }
   /*background section (logo-text-form)*/
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
   html {
     font-size: 53.5%;
   }
